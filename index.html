@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Delicious+Handrawn&family=McLaren&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="Icon" href="./images/pomodoro.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Pomodoro</title>
+</head>
+<body>
+    <div class="container">
+       <h1>Pomodoro </h1>
+
+        <div class="tabs">
+            <ul>
+                <li id="pomodoro-tab" >Pomodoro</li>
+                <li id="short-break-tab" > Short break</li>
+                <li id="long-break-tab" >Long break</li>
+            </ul>
+        </div>
+
+        <!-- circle is used for shadow purpose -->
+        <div class="circle">
+            <!-- gradient-circle is used for linear gradient  -->
+            <div class="gradient-circle">
+                    
+                    <div class="inner-circle">
+                        <!-- svg should come here -->
+                          <svg width="400px" height="400px" id="circular-svg" > 
+                            <circle  id="timer-fill" fill="transparent">
+                                
+                            </circle>
+                        </svg> 
+                               
+                        <h1 id="timer"></h1>
+                        <p id="pause">pause</p>
+                    </div>
+            </div>
+        </div>
+        <!-- Settings Icon -->
+        <div class="settings"> <img src="./images/gear.png" alt="settings" id="settings"> </div>
+    </div>
+
+    <!-- Settings page  -->
+    <div class="settings-page" id="setting-pg">
+        <div class="settings-page-heading">
+            <h1>Settings </h1>
+            <img src="./images/cross.png" height="30px" alt="" id="close-settings">
+        </div>
+        
+        <hr class="full-length">
+        <h2>Time (Minutes) </h2>
+        <div class="time-settings">
+            
+            <!-- pomodoro timer  -->
+            <div class="pomodoro-timer">
+                <label for="pomodoro-time">Pomodoro</label>
+                <input type="number" id="pomodoro" name="pomodoro-time" min="25" step="5" max="45" value="25" onchange="changeTimerPomodoro()">
+            </div>
+            <!-- short break timer  -->
+            <div class="short-break">
+                <label for="short-break">Short break</label>
+                <input type="number" id="short" name="short-break" min="5" max="15" step="1"  value="5"  onchange="changeTimerShort()">
+            </div>
+            <!-- long break timer  -->
+            <div class="long-brek">
+                <label for="long-break">Long break</label>
+                <input type="number" id="long" name="long-break" min="10" max="50" step="5" value="15" onchange="changeTimerLong()">
+            </div>
+            
+        </div>
+        <hr>
+
+        <!-- font-section -->
+        <div class="font-section">
+            <h2>Font</h2>
+            <ul>
+                <li id="poppins">Aa</li>
+                <li id="mclaren">Aa</li>
+                <li id="cursive">Aa</li>
+            </ul>
+            
+        </div>
+
+        <hr>
+
+        <!-- color-section -->
+        <div class="color-section">
+            <h2>Cycles</h2>
+            <ul>
+                <input id="cycles" type="number" value="2" min="2" step="2" max="6" onchange="noOfCycles()"></input>
+            </ul>
+        </div>
+
+     <!-- Apply button for settings page -->
+        <button id="apply" type="button">Apply</button>
+        
+    </div>
+    <script src="./app.js"  ></script>
+</body>
+</html>
